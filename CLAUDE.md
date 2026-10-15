@@ -47,3 +47,15 @@ No hay tests. Para verificar un cambio: servir la app y abrirla con Playwright
 (Chromium headless con `--autoplay-policy=no-user-gesture-required`), tocar ▶ y
 revisar que avance el compás, aparezcan las pistas y que un error de sintaxis no
 corte el audio.
+
+## Dónde quedamos (15 oct 2026)
+
+- Ya existe la primera base: el sol que sale al tocar, el reflejo que tiembla con
+  el sonido, el tempo, las pistas con volumen y paneo, y la partitura editable con ⌘↵.
+- **Falta confirmar con Ana** que la versión online suene dentro de claude.ai: se
+  probó solo con Chromium headless, servido en local. Si falla, lo más probable es
+  que claude.ai no deje cargar el WebAssembly o el AudioWorklet. Pedirle captura
+  o el texto en rojo de abajo de la partitura.
+- Safari sin probar.
+- Lo próximo lo decide Ana, desde el diseño: los objetos del amanecer y el ocaso
+  (luna al parar, otros elementos), la tipografía, cómo se toca en vivo.
