@@ -1,0 +1,5 @@
+# Compilación del motor (lo que se commitea es web/engine/anvar.wasm)
+engine/target/
+
+# macOS
+.DS_Store

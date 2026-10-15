@@ -1,0 +1,22 @@
+[package]
+name = "anvar-engine"
+version = "0.1.0"
+edition = "2021"
+description = "El motor de anvar: tatum-core compilado a WebAssembly para el navegador"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+# El código de Seba, tal cual viene en el submódulo. No se edita desde acá.
+tatum-core = { path = "../tatum/core" }
+# Fijado: el wasm-bindgen-cli instalado tiene que ser exactamente esta versión.
+wasm-bindgen = "=0.2.128"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

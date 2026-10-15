@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>anvar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1 class="mark">anvar</h1>
+    <p class="tag">entre el ocaso y el amanecer</p>
+  </header>
+
+  <main class="layout">
+    <section class="deck">
+      <div class="stage" id="stage" data-state="night">
+        <div class="sky"></div>
+        <div class="sunbox"><div class="sun" id="sun"><div class="glow"></div></div></div>
+        <div class="horizon"></div>
+        <canvas class="sea" id="sea"></canvas>
+        <div class="clock">
+          <span id="bar">—</span>
+          <span class="beats" id="beats"><i></i><i></i><i></i><i></i></span>
+        </div>
+      </div>
+
+      <div class="transport">
+        <button class="play" id="play" aria-label="Tocar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M8 5v14l11-7z"/></svg>
+        </button>
+        <label class="field">
+          <span>tema</span>
+          <select id="song"></select>
+        </label>
+        <label class="field tempo">
+          <span>tempo <b id="bpm">—</b></span>
+          <input type="range" id="tempo" min="60" max="180" step="1" value="120">
+        </label>
+      </div>
+
+      <ol class="tracks" id="tracks"></ol>
+    </section>
+
+    <section class="script">
+      <div class="script-head">
+        <span>partitura</span>
+        <span class="hint">⌘↵ aplica en el próximo compás</span>
+      </div>
+      <textarea id="source" spellcheck="false" autocomplete="off" wrap="off"></textarea>
+      <div class="status" id="status" role="status">tocá ▶ para despertar el sol</div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
