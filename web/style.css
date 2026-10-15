@@ -16,6 +16,7 @@
 
   --serif: "Fraunces", Georgia, serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark; /* anvar es siempre de noche: un solo tema, oscuro */
   --beat: 0;      /* 0..1, lo empuja app.js en cada tiempo */
   --rise: 0;      /* 0 = sol puesto, 1 = sol arriba */
 }
@@ -35,9 +36,12 @@ body {
 
 .top {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 16px;
-  padding: 28px 32px 8px;
+  column-gap: 16px;
+  padding-block: 28px 8px;
+  padding-left: max(32px, env(safe-area-inset-left, 0px));
+  padding-right: max(32px, env(safe-area-inset-right, 0px));
 }
 .mark {
   margin: 0;
@@ -56,11 +60,20 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 28px;
-  padding: 16px 32px 40px;
+  padding-block: 16px 40px;
+  padding-left: max(32px, env(safe-area-inset-left, 0px));
+  padding-right: max(32px, env(safe-area-inset-right, 0px));
 }
 @media (max-width: 900px) {
-  .layout { grid-template-columns: 1fr; padding: 12px 16px 32px; }
-  .top { padding: 20px 16px 4px; }
+  .layout { grid-template-columns: 1fr; padding-block: 12px 32px; }
+  .layout, .top {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .top { padding-block: 20px 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sun, .sky { transition: none; }
 }
 
 /* ── el horizonte ─────────────────────────────── */

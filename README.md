@@ -7,7 +7,11 @@ el sinte de Seba (Sebastián Usnik): música escrita como texto, que se puede ca
 mientras suena. anvar usa tatum tal cual, sin modificarlo, y le pone encima una
 UI/UX propia.
 
-## Abrirlo en la Mac
+## Usarlo
+
+La forma fácil, sin instalar nada: **https://claude.ai/artifact/LzzYgo1reSmC3yArpPqcqj**
+
+## Abrirlo en la Mac (para desarrollo)
 
 La primera vez:
 

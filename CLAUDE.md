@@ -19,6 +19,13 @@ castellano rioplatense; es diseñadora, así que explicar lo técnico sin jerga.
 - `wasm-bindgen` está fijado (`=0.2.128`) en `engine/Cargo.toml`; el
   `wasm-bindgen-cli` instalado tiene que ser exactamente esa versión.
 
+## La versión online (cómo la usa Ana)
+
+Ana no instala nada: usa anvar desde https://claude.ai/artifact/LzzYgo1reSmC3yArpPqcqj.
+Después de cambiar `web/`, correr `./scripts/build-artifact.sh` (arma `dist/` con
+los temas copiados adentro) y republicar ese artifact con todos los archivos de
+`dist/`. Terminar la respuesta con ese link.
+
 ## Cómo funciona
 
 - `web/` es estática, sin build: HTML/CSS/JS de módulos. Se sirve con

@@ -29,10 +29,16 @@ for (const [file, label] of SONGS) {
   $("song").append(new Option(label, file));
 }
 
+// En el repo los temas se leen del submódulo; en la versión publicada en
+// claude.ai vienen copiados en songs/ (ver scripts/build-artifact.sh).
+const SONG_DIRS = ["songs/", "../tatum/examples/"];
+
 async function fetchSong(file) {
-  const res = await fetch(`../tatum/examples/${file}.synth`);
-  if (!res.ok) throw new Error(`no encontré tatum/examples/${file}.synth (¿falta git submodule update --init?)`);
-  return res.text();
+  for (const dir of SONG_DIRS) {
+    const res = await fetch(`${dir}${file}.synth`).catch(() => null);
+    if (res?.ok) return res.text();
+  }
+  throw new Error(`no encontré el tema ${file} (¿falta git submodule update --init?)`);
 }
 
 function tempoFrom(source) {
